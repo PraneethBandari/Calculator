@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <table>
+      <tr>
+        <th colspan="4"><input type="text" name="disply" id="disply"></th>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="disply.value += '1'">1</button></td>
+        <td><button type="button" onclick="disply.value += '2'">2</button></td>
+        <td><button type="button" onclick="disply.value += '3'">3</button></td>
+        <td><button type="button" onclick="disply.value += ' + '">+</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="disply.value += '4'">4</button></td>
+        <td><button type="button" onclick="disply.value += '5'">5</button></td>
+        <td><button type="button" onclick="disply.value += '6'">6</button></td>
+        <td><button type="button" onclick="disply.value += ' - '">-</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="disply.value += '7'">7</button></td>
+        <td><button type="button" onclick="disply.value += '8'">8</button></td>
+        <td><button type="button" onclick="disply.value += '9'">9</button></td>
+        <td><button type="button" onclick="disply.value += ' * ' ">*</button></td>
+      </tr>
+      <tr>
+        <td><button type="button" onclick="disply.value = ''">Del</button></td>
+        <td><button type="button" onclick="disply.value += 0">0</button></td>
+        <td><button onclick="handle()">=</button></td>
+        <td><button type="button" onclick="disply.value += '/'">/</button></td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <p id="result"></p>
+  <hr>
+  <p id="results"></p>
+
+  <script>
+    function handle() {
+      var expression = document.getElementById('disply').value;
+      var result = eval(expression);
+      document.getElementById('results').textContent = 'result: ' + result;
+    }
+  </script>
+</body>
+</html>
